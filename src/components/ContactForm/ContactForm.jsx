@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectContacts } from "redux/selectors";
-import { addContact} from "redux/operations";
-import style from "./ContactForm.module.css";
+import { selectContacts } from "redux/contacts/selectors";
+import { addContact} from "redux/contacts/operations";
+import css from "./ContactForm.module.css";
 
 
 const ContactForm = () => {
@@ -34,11 +34,11 @@ const ContactForm = () => {
 		form.reset();
 	};
 	return (
-		<form className={style.form} onSubmit={handleAddContact}>
+		<form className={css.form} onSubmit={handleAddContact}>
 			<label htmlFor="name">
 				Name
 				<input
-					className={style.formInput}
+					className={css.formInput}
 					autoComplete="off"
 					type="text"
 					name="name"
@@ -51,7 +51,7 @@ const ContactForm = () => {
 			<label htmlFor="number">
 				Number
 				<input
-					className={style.formInput}
+					className={css.formInput}
 					autoComplete="off"
 					type="tel"
 					name="number"
@@ -61,7 +61,7 @@ const ContactForm = () => {
 					required
 				/>
 			</label>
-			<button className={style.formBtn} type="submit">
+			<button className={css.formBtn} type="submit">
 				Add contact
 			</button>
 		</form>

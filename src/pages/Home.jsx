@@ -1,9 +1,9 @@
-import style from "../pages/Home.module.css"
+import css from "../pages/Home.module.css"
 
 const Home = () => {
   return (
-    <div style={style.container}>
-      <h1 style={style.title}>
+    <div className={css.container}>
+      <h1 className={css.title}>
         Phonebook welcome page{' '}
         <span role="img" aria-label="Greeting icon">
           💁‍♀️

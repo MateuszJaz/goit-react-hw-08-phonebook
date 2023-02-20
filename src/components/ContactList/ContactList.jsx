@@ -1,7 +1,7 @@
-import { selectFilterValue, selectContacts, selectErrorStatus } from "redux/selectors";
+import { selectFilterValue, selectContacts, selectErrorStatus } from "redux/contacts/selectors";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteContact } from "redux/operations";
-import style from "./Contacts.module.css";
+import { deleteContact } from "redux/contacts/operations";
+import css from "./Contacts.module.css";
 
 const ContactList = () => {
 	const dispatch = useDispatch();
@@ -16,13 +16,13 @@ const ContactList = () => {
 	);
 
 	return filteredContacts.length > 0 ? (
-		<ul className={style.ContactList}>
+		<ul className={css.ContactList}>
 			{filteredContacts.map(({ id, name, number }) => {
 				return (
-				<li className={style.contactsItem} key={id}>
+				<li className={css.contactsItem} key={id}>
 					{name}: {number}
 					<button
-						className={style.contactBtn}
+						className={css.contactBtn}
 						type="submit"
 						onClick={() => dispatch(deleteContact(id))}
 					>

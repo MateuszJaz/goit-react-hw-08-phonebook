@@ -1,12 +1,12 @@
 import propTypes from 'prop-types';
-import style from './Contacts.module.css';
+import css from './Contacts.module.css';
 
 const ContactListItem = ({ contacts, handleDelete }) =>
   contacts.map(({ id, name, number }) => (
-    <li className={style.contactsItem} key={id}>
+    <li className={css.contactsItem} key={id}>
       {name}: {number}
       <button
-        className={style.contactBtn}
+        className={css.contactBtn}
         type="submit"
         onClick={() => handleDelete(id)}
       >

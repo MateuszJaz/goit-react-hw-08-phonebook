@@ -4,9 +4,9 @@ const Home = () => {
   return (
     <div className={css.container}>
       <h1 className={css.title}>
-        Phonebook welcome page{' '}
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
+        Phonebook App{' '}
+        <span role="img" aria-label="Phone icon">
+          📖
         </span>
       </h1>
     </div>

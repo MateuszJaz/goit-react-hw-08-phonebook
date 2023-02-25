@@ -64,6 +64,7 @@ const ContactForm = () => {
           <TextField
             fullWidth
             required
+            type="tel"
             id="number"
             label="Phone number"
             name="number"
@@ -71,8 +72,6 @@ const ContactForm = () => {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             inputProps={{
               inputMode: 'numeric',
-              pattern:
-                '+?d{1,4}?[-.s]?(?d{1,3}?)?[-.s]?d{1,4}[-.s]?d{1,4}[-.s]?d{1,9}',
             }}
           />
         </Grid>

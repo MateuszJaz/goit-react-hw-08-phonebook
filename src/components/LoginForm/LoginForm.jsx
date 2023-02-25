@@ -1,6 +1,7 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 import { Link } from 'react-router-dom';
+import { selectErrorStatus } from 'redux/auth/selectors';
 
 import * as React from 'react';
 import Button from '@mui/material/Button';
@@ -13,8 +14,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export const LoginForm = () => {
+  const error = useSelector(selectErrorStatus);
   const dispatch = useDispatch();
-
   const handleSubmit = e => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
@@ -45,18 +46,21 @@ export const LoginForm = () => {
           </Typography>
           <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={3}>
-              <Grid item xs={6}>
+              <Grid item xs={12}>
                 <TextField
-                  required
                   fullWidth
+                  type="email"
+                  error={error === 'Request failed with status code 400'}
+                  required
                   id="email"
                   label="Email Address"
                   name="email"
                   autoComplete="email"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={12}>
                 <TextField
+                  error={error === 'Request failed with status code 400'}
                   required
                   fullWidth
                   name="password"
@@ -68,8 +72,8 @@ export const LoginForm = () => {
               </Grid>
             </Grid>
             <Button
-              type="submit"
               fullWidth
+              type="submit"
               variant="contained"
               sx={{
                 mt: 3,

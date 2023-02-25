@@ -1,15 +1,9 @@
 .container {
-  min-height: calc(100vh - 50px);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   align-content: flex-start;
-}
-
-.container h1 {
-  width: 100%;
-  text-align: center;
 }
 
 .title {
@@ -20,9 +14,8 @@
 
 .filter {
   display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-width: 410px;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 7vh;
-  width: 25vw;
 }

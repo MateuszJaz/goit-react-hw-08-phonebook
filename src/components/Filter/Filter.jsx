@@ -12,6 +12,11 @@ export const Filter = () => {
     dispatch(setFilter(value));
   };
 
+  const handleClear = e => {
+    e.target.value = '';
+    dispatch(setFilter(''));
+  };
+
   return (
     <Box
       component="form"
@@ -24,10 +29,12 @@ export const Filter = () => {
       <Grid item xs={2}>
         <TextField
           fullWidth
+          inputMode="search"
           id="filter"
           name="filter"
           placeholder="Find contacts by name or number "
           title="John Doe or 123-456-654"
+          onBlur={handleClear}
         />
       </Grid>
     </Box>

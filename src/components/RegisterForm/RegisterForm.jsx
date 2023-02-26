@@ -51,6 +51,7 @@ export const RegisterForm = () => {
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <TextField
+                  inputMode="text"
                   name="name"
                   required
                   fullWidth
@@ -63,6 +64,7 @@ export const RegisterForm = () => {
                 <TextField
                   required
                   fullWidth
+                  inputMode="email"
                   id="email"
                   label="Email Address"
                   name="email"

@@ -49,6 +49,7 @@ export const LoginForm = () => {
               <Grid item xs={12}>
                 <TextField
                   fullWidth
+                  inputMode="email"
                   type="email"
                   error={error === 'Request failed with status code 400'}
                   required

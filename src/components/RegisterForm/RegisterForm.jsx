@@ -15,7 +15,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-  const error = useSelector(selectErrorStatus);
+  const error =
+    useSelector(selectErrorStatus) === 'Request failed with status code 400';
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -55,7 +56,7 @@ export const RegisterForm = () => {
                   fullWidth
                   id="name"
                   label="Name"
-                  error={error === 'Request failed with status code 400'}
+                  error={error}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -66,7 +67,7 @@ export const RegisterForm = () => {
                   label="Email Address"
                   name="email"
                   type="email"
-                  error={error === 'Request failed with status code 400'}
+                  error={error}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -77,7 +78,7 @@ export const RegisterForm = () => {
                   label="Password"
                   type="password"
                   id="password"
-                  error={error === 'Request failed with status code 400'}
+                  error={error}
                 />
               </Grid>
             </Grid>
